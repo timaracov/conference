@@ -1,0 +1,52 @@
+.login__page {
+    display: flex;
+    justify-content: center;
+    margin-top: 30vh;
+}
+
+.border__page {
+    background-color: white;
+    border: 1px #DBDBDB solid;
+    border-radius: 15px;
+    width: 250px;
+    height: 311px;
+}
+
+h1 {
+    color: #606060;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#up_inp {
+    margin-bottom: 12px;
+}
+
+#down_inp {
+    margin-bottom: 12px;
+}
+
+#sub_links {
+    display: flex;
+    padding: 10px 0 20px 0;
+}
+
+#sign_up_a {
+    text-align: right;
+    width: 204px;
+    color: #7E7E7E;
+    font-size: 10px;
+    text-decoration: underline;
+}
+
+#login__button {
+    display: flex;
+    justify-content: center;
+}
+
+Input {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}

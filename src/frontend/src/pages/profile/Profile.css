@@ -1,0 +1,106 @@
+.home__page {
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+}
+
+#outer__container {
+    background-color: green;
+    width: 364px;
+}
+
+#avatar { }
+
+#avatar_pic {
+    position: absolute;
+}
+#avatar_icon {
+    position: absolute;
+    z-index: 1;
+}
+
+#avatar_and_names {
+    display: flex;
+}
+
+#profile__avatar {
+}
+
+#profile__names {
+    margin-left: 100px;
+}
+
+#pic__names {
+    display: flex;
+}
+#name_and_icon {
+    background-color: darkgoldenrod;
+    display: flex;
+}
+#name_icon {
+    background-color: violet;
+}
+#group_icon {
+    background-color:springgreen;
+}
+#group_and_icon {
+    display: flex;
+    background-color:tomato;
+}
+#variants {
+    margin-left: 0;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+.variant {
+    margin-left: 10px;
+}
+#patalogies {
+    background-color: #EBAD4F;
+    width: 90px;
+    height: 40px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+#exercises {
+    background-color: #EB4F4F;
+    width: 90px;
+    height: 40px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+#docs {
+    background-color: #4F5FEB;
+    width: 90px;
+    height: 40px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#patalogies_a {
+    color: white;
+    text-decoration: none;
+    font-size: 10;
+}
+#exercises_a {
+    color: white;
+    text-decoration: none;
+    font-size: 10;
+}
+#docs_a {
+    color: white;
+    text-decoration: none;
+    font-size: 10;
+}
+
+h1 {
+    height: 0;
+}
+h2 {
+    height: 0;
+}
