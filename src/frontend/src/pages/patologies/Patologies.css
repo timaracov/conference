@@ -1,0 +1,35 @@
+.patologies__page {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.patologies__page__container {
+    width: 364px;
+    margin-left: 60px;
+}
+
+.patologies__page__buttons {
+    display: flex;
+    justify-content: right;
+}
+
+.patologies__page__add_button {
+    padding: 5px 10px;
+    font-size: 10px;
+    background-color: #4F5FEB;
+    color: white;
+    border-radius: 40px;
+    outline: none;
+    border: 0px;
+    font-weight: 1000;
+}
+.patologies__page__add_button:hover {
+    background-color: #3e4ab8;
+    cursor: pointer;
+}
+
+.patologies__page__data {
+    padding: 10px 0 0 0;
+}

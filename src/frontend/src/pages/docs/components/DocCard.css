@@ -1,0 +1,45 @@
+.doc__card {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    border: 1px solid #DBDBDB;
+    border-radius: 15px;
+}
+
+.doc__card:hover {
+    background-color: #DBDBDB;
+    border-color: #C0C0C0;
+    cursor: pointer;
+}
+
+.doc__card__img {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #DBDBDB;
+    border-radius: 10px;
+}
+
+.doc__card__name {
+    font-size: 12px;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.doc__card__left {
+    display: flex;
+}
+.doc__card__right {
+    display: flex;
+}
+
+.icon_img_add {
+    margin-top: 15px;
+}
+.icon_del_doc {
+    margin-top: 15px;
+    margin-left: 5px;
+}

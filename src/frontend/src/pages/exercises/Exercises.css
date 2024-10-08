@@ -1,0 +1,54 @@
+.exercises__page {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.exercises__page__container {
+    width: 364px;
+    margin-left: 60px;
+}
+.exerises__buttons {
+    display: flex;
+}
+.my__list__button {
+    background-color: white;
+    border: 1px solid #DBDBDB;
+    border-radius: 15px;
+    font-size: 10px;
+    padding: 5px 10px;
+}
+.my__list__button:hover {
+    background-color: #DBDBDB;
+    border: 1px solid #bcbcbc;
+    border-radius: 15px;
+    font-size: 10px;
+    padding: 5px 10px;
+}
+.my__list__button__active {
+    background-color: white;
+    border: 1px solid #DBDBDB;
+    border-radius: 15px;
+    font-size: 10px;
+    padding: 5px 10px;
+    font-weight: 700;
+}
+
+.all__list__button {
+    background-color: white;
+    border: 1px solid #DBDBDB;
+    border-radius: 15px;
+    font-size: 10px;
+    padding: 5px 10px;
+    margin-left: 10px;
+}
+.all__list__button__active {
+    background-color: white;
+    border: 1px solid #DBDBDB;
+    border-radius: 15px;
+    font-size: 10px;
+    padding: 5px 10px;
+    margin-left: 10px;
+    font-weight: 700;
+}
+.exercises__container {}

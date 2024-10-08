@@ -12,12 +12,12 @@
     height: 311px;
 }
 
-h1 {
+.header__login {
     color: #606060;
     font-size: 24px;
     text-align: center;
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 80px;
 }
 
 #up_inp {
@@ -37,7 +37,7 @@ h1 {
     text-align: right;
     width: 204px;
     color: #7E7E7E;
-    font-size: 10px;
+    font-size: 11px;
     text-decoration: underline;
 }
 
@@ -46,7 +46,26 @@ h1 {
     justify-content: center;
 }
 
-Input {
+.button_login {
+    margin-bottom: 10px;
+
+    padding: 10px;
+    width: 200px;
+
+    font-size: 10px;
+    font-weight: 1000;
+
+    border-radius: 40px;
+    outline: none;
+    border: 0px;
+    background-color: #4F5FEB;
+    color: white;
+}
+.button_login:hover {
+    background-color: #3844a9;
+    color: white;
+}
+.input__login {
     margin-left: 20px;
     margin-bottom: 10px;
 }

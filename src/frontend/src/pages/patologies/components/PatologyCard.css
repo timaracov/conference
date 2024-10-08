@@ -1,0 +1,36 @@
+.patology__card {
+    background-color: white;
+    border: 1px solid #DBDBDB;
+    border-radius: 15px;
+    display: flex;
+    padding: 5px 0;
+    margin-bottom: 10px;
+}
+
+.patology__card__left {
+    display: flex;
+    justify-content: space-between;
+    width: 364px;
+    padding: 5px 10px;
+}
+
+.patology__card__name {
+    font-size: 12px;
+    font-weight: 700;
+    width: 100px;
+    margin-left: 10px;
+}
+
+.patology__card__level {
+    font-size: 10px;
+    margin-right: 10px;
+}
+
+.patology__card__right {
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+.icon_del:hover {
+    cursor: pointer;
+}

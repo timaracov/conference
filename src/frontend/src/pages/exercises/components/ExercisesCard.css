@@ -1,0 +1,43 @@
+.exercises__card {
+    margin-top: 10px;
+    background-color: white;
+    border: 1px solid #DBDBDB;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.exercises__card__left {
+    padding: 5px 10px;
+}
+.exercises__card__name {
+    font-size: 10px;
+    font-weight: 700;
+}
+.exercises__card__text {
+    font-size: 8px;
+}
+.exercises__card__right {
+    position: relative;
+    padding: 5px 10px;
+    font-size: 10px;
+}
+.exercises__card__difficulty {
+    display: flex;
+}
+.exercises__card__time {
+    position: absolute;
+    bottom: 5px;
+    text-align: right;
+    display: flex;
+}
+.difficulty__name {
+   width: 40px;
+   margin-left: 5px;
+}
+.time__name {
+    margin-left: 5px;
+}
+
+.time__icon {
+}
+.difficulty__ok {}

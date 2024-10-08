@@ -1,0 +1,194 @@
+.home__page {
+    /* display: flex;
+    justify-content: center;
+    margin-top: 10vh; */
+    margin: 60px 0 0 0;
+}
+
+#outer__container {
+    background-color: #fff;
+    width: 364px;
+    padding: 20px 30px;
+    border-radius: 15px;
+    border: 1px solid #DBDBDB;
+}
+
+.profile__icon {
+
+}
+
+#avatar { }
+
+#avatar_pic {
+    position: absolute;
+}
+#avatar_icon {
+    position: absolute;
+    z-index: 1;
+}
+
+#avatar_and_names {
+    display: flex;
+}
+
+#profile__avatar {
+    background-color: gray;
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+}
+
+#profile__names {
+    margin-left: 10px;
+}
+
+.profile__name {
+    color: #444444;
+    font-size: 16px;
+    margin: 0;
+}
+
+.profile__group {
+    color: #444444;
+    font-size: 12px;
+    margin: 0;
+    margin-top: 2px;
+    margin-bottom: 12px;
+}
+
+#pic__names {
+    display: flex;
+    align-items: end;
+}
+#name_and_icon {
+    background-color: darkgoldenrod;
+    display: flex;
+}
+#name_icon {
+    background-color: violet;
+}
+#group_icon {
+    background-color:springgreen;
+}
+#group_and_icon {
+    display: flex;
+    background-color:tomato;
+}
+#variants {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+.variant {
+    margin-right: 10px;
+    width: 100%;
+    height: 37px;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.variant:last-child {
+    margin-right: 0;
+}
+
+.variant__text {
+    font-size: 10px;
+    font-weight: 700;
+    color: #fff;
+}
+
+
+.variant_1 {
+    border: 2px solid #EBAD4F;
+    background-color: #fff;
+    color: #EBAD4F;
+}
+
+.variant_1:hover {
+    border: 2px solid #98743c;
+    background-color: #fff;
+    color: #be8b3f;
+}
+
+.variant_active_1 {
+    background-color: #EBAD4F;
+    color: #fff;
+}
+
+.variant_active_1:hover {
+    background-color: #926b32;
+    color: #fff;
+}
+
+.variant_2 {
+    border: 2px solid #EB4F4F;
+    background-color: #fff;
+    color: #EB4F4F;
+}
+.variant_2:hover {
+    border: 2px solid #bf4040;
+    background-color: #fff;
+    color: #b33c3c;
+}
+
+.variant_active_2 {
+    background-color: #EB4F4F;
+    color: #fff;
+}
+.variant_active_2:hover {
+    background-color: #b33b3b;
+    color: #fff;
+}
+
+.variant_3 {
+    border: 2px solid #4F5FEB;
+    background-color: #fff;
+    color: #4F5FEB;
+}
+.variant_3:hover {
+    border: 2px solid #3944a9;
+    background-color: #fff;
+    color: #35409f;
+}
+
+.variant_active_3 {
+    background-color: #4F5FEB;
+    color: #fff;
+}
+.variant_active_3:hover {
+    background-color: #3743a9;
+    color: #fff;
+}
+
+#patalogies_a {
+    color: white;
+    text-decoration: none;
+    font-size: 10;
+}
+#exercises_a {
+    color: white;
+    text-decoration: none;
+    font-size: 10;
+}
+#docs_a {
+    color: white;
+    text-decoration: none;
+    font-size: 10;
+}
+
+h1 {
+    height: 0;
+}
+h2 {
+    height: 0;
+}
