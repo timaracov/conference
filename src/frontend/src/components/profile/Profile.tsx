@@ -44,7 +44,7 @@ export function Profile() {
                         </div>
                     </div>
                     <div id="variants">
-                        <Link className={classNames("variant variant_1", { 'variant_active variant_active_1': currentTab === '/patologies' || currentTab == '/profile' })} to={'/patologies'}>
+                        <Link className={classNames("variant variant_1", { 'variant_active variant_active_1': currentTab === '/patologies' || currentTab === '/profile' })} to={'/patologies'}>
                             Патологии
                         </Link>
 

@@ -1,13 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import "./Exercises.css"
 import ExercisesCard from "./components/ExercisesCard";
 import { Profile } from "../../components/profile/Profile";
 
-
-type ExercisesProps = {
-    activeButton: Number
-}
 
 const data = [
     {
@@ -30,18 +26,34 @@ const data = [
     }
 ]
 
-export default function Exercises({activeButton = 1}: ExercisesProps) {
+const dataMy = [
+    {
+        "name": "Комплекс дыхательных упражнений",
+        "difficulty": 1, 
+        "minutes_to_do": 10, 
+        "text": String("Ясность нашей позиции очевидна: сложившаяся структура организации напрямую зависит от направлений прогрессивного развития. Вот вам яркий пример современных тенденций — базовый вектор развития обеспечивает широкому кругу (специалистов) участие в формировании прогресса профессионального сообщества. Каждый из нас понимает очевидную вещь: внедрение современных методик способствует подготовке и реализации укрепления моральных ценностей.  Противоположная точка зрения подразумевает, что активно развивающиеся страны третьего мира будут объявлены нарушающими общечеловеческие нормы этики и морали.  Прежде всего, новая модель организационной деятельности напрямую зависит от первоочередных требований.  Однозначно, ключевые особенности структуры проекта являются только методом политического участия и функционально разнесены на независимые элементы. Для современного мира современная методология разработки способствует повышению качества форм воздействия."),
+    },
+]
+
+export default function Exercises() {
+    const [myOrAll, setMyorAll] = useState(1);
+    const [list, setList] = useState(dataMy);
+
+    useEffect(() => {
+        myOrAll === 1 ? setList(dataMy) : setList(data)
+    }, [myOrAll])
+
     return (
         <div className="container">
             <Profile/>
             <div className="exercises__page">
                 <div className="exercises__page__container">
                     <div className="exerises__buttons">
-                        <div className={activeButton === 1 ? "my__list__button__active" : "my__list__button"}>Мой список</div>
-                        <div className={activeButton === 2 ? "all__list__button__active" : "all__list__button"}>Все упражнения</div>
+                        <div className={myOrAll=== 1 ? "my__list__button__active" : "my__list__button"} onClick={() => {setMyorAll(1)}}>Мой список</div>
+                        <div className={myOrAll === 2 ? "all__list__button__active" : "all__list__button"} onClick={() => {setMyorAll(2)}}>Все упражнения</div>
                     </div>
                     <div className="exercises__container">
-                        {data.map(el =>
+                        {list.map(el =>
                             <ExercisesCard name={el.name} difficulty={el.difficulty} minutes_to_do={el.minutes_to_do} text={el.text}/>
                         )}
                     </div>

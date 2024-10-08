@@ -1,5 +1,4 @@
 import React from 'react';
-import IconEdit from '../../icons/IconEdit';
 
 import "./Patologies.css"
 import PatologyCard from './components/PatologyCard';

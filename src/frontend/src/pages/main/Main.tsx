@@ -7,7 +7,6 @@ export function Main() {
     const [isLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();
 
-
     useEffect(() => {
         // запрос на авторизацию
         // then -> redirect -> profile
@@ -19,9 +18,13 @@ export function Main() {
         }, 2000);
     }, [])
 
-    return (
-        <div className="main">
-            <img className="preloader__img" src="/preloader.gif" alt="" />
-        </div>
-    );
+    if (isLoading) {
+        return (
+            <div className="main">
+                <img className="preloader__img" src="/preloader.gif" alt="" />
+            </div>
+        );
+    } else {
+        navigate('/patologies')
+    }
 }

@@ -5,7 +5,7 @@ import IconDel from "../../../icons/IconDel";
 
 type PropsCard  = {
     name: string;
-    level: Number;
+    level: number;
 };
 
 const levels = [
