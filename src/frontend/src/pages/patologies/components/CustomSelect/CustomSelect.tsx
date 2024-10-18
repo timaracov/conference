@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import "./CustomSelect.css"
+
 // Определение типов для пропсов
 interface CustomSelectProps {
   options: string[];
@@ -21,43 +23,29 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
 
   const handleOptionClick = (value: string) => {
     setSelectedValue(value);
-    onSelect(value); // Вызов родительского метода с выбранным значением
-    setIsOpen(false); // Закрытие дропдауна
+    onSelect(value);
+    setIsOpen(false);
   };
 
   return (
     <div
-      className="custom-select"
-      style={{ position: "relative", width: "200px" }}
+      className="custom_select"
     >
       <div
+        className="select__top"
         onClick={toggleDropdown}
-        style={{
-          border: "1px solid #ccc",
-          padding: "10px",
-          cursor: "pointer",
-        }}
       >
         {selectedValue || placeholder || "Select..."}
       </div>
       {isOpen && (
         <div
-          style={{
-            border: "1px solid #ccc",
-            position: "absolute",
-            width: "100%",
-            backgroundColor: "white",
-            zIndex: 1,
-          }}
+          className="select_opened"
         >
           {options.map((option) => (
             <div
+              className="select_ok"
               key={option}
               onClick={() => handleOptionClick(option)}
-              style={{
-                padding: "10px",
-                cursor: "pointer",
-              }}
             >
               {option}
             </div>

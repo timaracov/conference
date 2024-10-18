@@ -5,6 +5,7 @@ import ExercisesCard from "./components/ExercisesCard";
 import { Profile } from "../../components/profile/Profile";
 
 
+
 const data = [
     {
         "name": "Комплекс дыхательных упражнений",

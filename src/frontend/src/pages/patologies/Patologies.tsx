@@ -4,7 +4,8 @@ import "./Patologies.css";
 import PatologyCard from "./components/PatologyCard";
 import { Profile } from "../../components/profile/Profile";
 import Popup from "../../components/Popup/Popup";
-import CustomSelect from "../../components/CustomSelect/CustomSelect";
+import CustomSelect from "./components/CustomSelect/CustomSelect";
+import { Input } from "../../components/inputs/Input";
 
 const data = [
   {
@@ -68,13 +69,16 @@ const Patologies = () => {
 
       <Popup isOpen={isPopupOpen} onClose={closePopup}>
         <div className="patologies__popup">
-          <p className="popup__title">Добавление поталогии</p>
-
-          <CustomSelect
-            options={["Option 1", "Option 2", "Option 3"]}
-            onSelect={handleSelectChange}
-            placeholder="Выберите опцию"
-          />
+          <p className="popup__title">Добавление патологии</p>
+          <div className="inputs__patologies">
+            <Input className="input__select" placeholder="Патология" type="text"/>
+            <CustomSelect
+              options={["I Степень", "II Степень", "III Степень", "IV Степень", "V Степень", "VI Степень", ]}
+              onSelect={handleSelectChange}
+              placeholder="Степень"
+            />
+          </div>
+          <button className="patology__add">Добавить</button>
         </div>
       </Popup>
     </div>

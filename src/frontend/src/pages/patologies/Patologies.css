@@ -33,3 +33,32 @@
 .patologies__page__data {
     padding: 10px 0 0 0;
 }
+
+.popup__select {
+    border-radius: 10px; 
+    cursor: pointer;
+}
+
+.inputs__patologies {
+    display: flex;
+}
+
+.input__select {
+    border-color: black;
+}
+
+.patology__add {
+    padding: 5px 10px;
+    font-size: 10px;
+    background-color: #4F5FEB;
+    color: white;
+    border-radius: 40px;
+    outline: none;
+    border: 0px;
+    font-weight: 1000;
+    margin-top: 20px;
+}
+.patology__add:hover {
+    background-color: #3e4ab8;
+    cursor: pointer;
+}

@@ -18,8 +18,8 @@ export default function ExercisesCard({name, difficulty, minutes_to_do, text}: E
     const [isOpened, setIsOpened] = useState(false);
     if (isOpened === true) {
         return (
-            <div className="exercises__card__opened"  >
-                <div className="exercises__card__opened_top">
+            <div className="exercises__card__opened" >
+                <div className="exercises__card__opened_top" >
                     <p className="exercises__card__opened_name">
                         {name}
                     </p>
@@ -29,14 +29,14 @@ export default function ExercisesCard({name, difficulty, minutes_to_do, text}: E
                             {difficulty === 1 ? "Просто" : difficulty === 2 ? "Средне" : "Сложно"}
                         </p>
                     </div>
-                    <div className="exercises__card_opened__time">
+                    <div className="exercises__card_opened__time" >
                         <IconTime className="time_opened__icon"/>
                         <p className="time__opened_name">
                             {`${minutes_to_do} мин`}
                         </p>
                     </div>
-                    <div className="exercises__expand" >
-                        <IconExpand className="exercises_expand_icon" onClick={() => setIsOpened(false)}/>
+                    <div className="exercises__expand" onClick={() => setIsOpened(false)}>
+                        <IconExpand className="exercises_expand_icon" />
                     </div>
                 </div>
                 <div className="exercises__card__bottom">
