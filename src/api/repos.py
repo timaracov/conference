@@ -19,6 +19,9 @@ class AppRepo:
             second_name=second_name,
         ).save(force_insert=True)
 
+    def update_user(self, user_id: str, fio: str, group: str):
+        User.update(first_name=fio, second_name=group).where(User.user_id == user_id).execute()
+
     def get_user(self, user_id: str):
         user = User.select().where(User.user_id == user_id).get()
         return user

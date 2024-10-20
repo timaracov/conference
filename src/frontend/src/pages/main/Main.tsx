@@ -3,20 +3,29 @@ import { useNavigate } from "react-router-dom";
 
 import "./Main.css";
 
+import endpoints from "../../api/endpoints";
+
 
 export function Main() {
     const [isLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();
 
     useEffect(() => {
-        // запрос на авторизацию
-        // then -> redirect -> profile
-        // catch -> redicrect -> login
-        
-        setTimeout(() => {
-            setIsLoading(false)
-            navigate('/patologies')
-        }, 2000);
+        setTimeout(() => {}, 2000);
+
+        endpoints.getProfile()
+            .then((e) => {
+                console.log(e);
+                setIsLoading(false);
+                setTimeout(() => {}, 2000);
+                navigate('/patologies');
+            })
+            .catch((e) => {
+                console.log(e);
+                setIsLoading(false);
+                setTimeout(() => {}, 2000);
+                navigate("/login");
+            })
     }, [])
 
     if (isLoading) {

@@ -38,6 +38,12 @@ async def get_my_profile(user_id: str):
     return ORJSONResponse({"message": "ok", "user": u.to_dict()})
 
 
+@API.put("/profile", tags=["Profile"])
+async def update_my_profile(user_id: str, fio: str, group: str):
+    AppRepo().update_user(user_id, fio, group)
+    return ORJSONResponse({"message": "ok"})
+
+
 @API.post("/profile/login", tags=["Profile"])
 async def login_to_profile(login: str, password: str):
     try:

@@ -31,3 +31,7 @@
     background-color: #3e4ab8;
     cursor: pointer;
 }
+
+.input__filename {
+    margin-bottom: 10px;
+}

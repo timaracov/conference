@@ -1,26 +1,60 @@
 import React, { useEffect, useState } from "react";
 
 import "./Profile.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import classNames from "classnames";
 import Popup from "../Popup/Popup";
 import IconEdit from "../../icons/IconEdit";
+import endpoints from "../../api/endpoints";
+import { Input } from "../inputs/Input";
+
 
 export function Profile() {
   const location = useLocation();
-  const [currentTab, setCurrentTab] = useState("/docs");
+  const navigate = useNavigate();
 
+  const [currentTab, setCurrentTab] = useState("/docs");
   const [isPopupOpen, setPopupOpen] = useState(false);
+  const [FIO, setFIO] = useState('');
+  const [group, setGroup] = useState('');
+
+  const [updFIO, setUpdFIO] = useState(FIO);
+  const [updGroup, setUpdGroup] = useState(group);
+
   const openPopup = () => {
     setPopupOpen(true);
   };
-
   const closePopup = () => {
     setPopupOpen(false);
   };
 
+  function updateProfileInfo() {
+    endpoints
+    .updateProfile(updFIO, updGroup)
+    .then((e) => {
+      console.log(e);
+      closePopup() 
+    })
+    .catch((e) => {
+      console.log(e);
+      alert("Ошибка обновления данных. Повторите попытку позже") 
+      closePopup()
+    })
+  }
+
   useEffect(() => {
     setCurrentTab(location.pathname);
+    endpoints
+    .getProfile()
+    .then((d) => {
+      setFIO(d.first_name);
+      setGroup(d.second_name)
+    })
+    .catch(
+      () => {
+        navigate('/login');
+      }
+    )
   }, [location]);
 
   console.log(currentTab);
@@ -34,8 +68,8 @@ export function Profile() {
               <div id="pic__names">
                 <img id="profile__avatar" src="/profile.png" alt="" />
                 <div id="profile__names">
-                  <p className="profile__name">Тимофей Нейенбург</p>
-                  <p className="profile__group">21-ВТ-2</p>
+                  <p className="profile__name">{FIO}</p>
+                  <p className="profile__group">{group}</p>
                   <div onClick={() => openPopup()}>
                     <IconEdit className="profile__icon" />
                   </div>
@@ -76,7 +110,10 @@ export function Profile() {
 
           <Popup isOpen={isPopupOpen} onClose={closePopup}>
             <div className="profile__popup">
-              <p className="popup__title">Добавление поталогии</p>
+              <p className="popup__title">Обновить данные профиля</p>
+              <Input className="input__fio" placeholder={String(FIO)} type="text" onChange={(e) => setUpdFIO(e.target.value)}/>
+              <Input className="input__group" placeholder={String(group)} type="text" onChange={(e) => setUpdGroup(e.target.value)}/>
+              <button className="upd_profile_button" onClick={() => updateProfileInfo()}>Обновить</button>
             </div>
           </Popup>
         </div>

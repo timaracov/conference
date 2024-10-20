@@ -79,22 +79,26 @@ async function getPatologies(forUser: boolean = false) : Promise<any []> {
 async function getExercises(withPatologies: boolean = false) {
   let patologies_ids;
 
+  let url;
+
   if (withPatologies) {
     const data = await getPatologies(true)
     patologies_ids = data.map(el => el.patology_id);
+    const query = patologies_ids.join('&patologies_ids=');
+    url = `/exercises?patologies_ids=${query}`
   } else {
     patologies_ids = null;
+    url = "/exercises"
   }
 
-  const resp = await api.get("/profile", {
-    params: {
-      patologies_ids: patologies_ids,
-    },
-    headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-    }
-  })
+  const resp = await api.get(url,
+    {
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+      }
+   }
+  )
 
   return resp.data.data;
 }
@@ -103,7 +107,7 @@ async function getExercises(withPatologies: boolean = false) {
 async function getDocuments() {
   const user_id = localStorage.getItem("uid");
 
-  return await api.get('/documents', {
+  const resp = await api.get('/documents', {
     params: {
       user_id: user_id,
     },
@@ -112,6 +116,7 @@ async function getDocuments() {
       'Access-Control-Allow-Origin': '*',
     }
   })
+  return resp.data.data
 }
 
 
@@ -131,8 +136,59 @@ async function addPatology(name: string, level: Number) {
   })
 }
 
-async function addDocument() {  
-  // fuck my ass
+async function addDocument(file: File, name: string) {  
+  const user_id = localStorage.getItem("uid");
+
+  var data = new FormData();
+  data.append('file', file);
+
+  await api.post("/documents", 
+   data,
+    {
+      params: {
+        user_id: user_id,
+        name: name,
+      },
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        'Access-Control-Allow-Origin': '*',
+      }
+    }
+  )
+}
+
+async function updateProfile(fio: string, group: string) {
+  const user_id = localStorage.getItem("uid");
+
+  await api.put("/profile", {}, {
+    params: {
+      user_id: user_id,
+      fio: fio,
+      group: group
+    },
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+    }
+  })
+}
+
+
+async function deleteData(data_id: string, data_kind: string) { 
+  let url;
+
+  if (data_kind === 'doc') {
+    url = `/documents/${data_id}`
+  } else {
+    url = `/patologies/${data_id}`
+  }
+
+  await api.delete(url, {
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+    }
+  })
 }
 
 
@@ -145,4 +201,6 @@ export default {
   getDocuments,
   addPatology,
   addDocument,
+  updateProfile,
+  deleteData,
 };

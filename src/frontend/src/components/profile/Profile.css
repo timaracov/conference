@@ -192,3 +192,26 @@ h1 {
 h2 {
     height: 0;
 }
+
+
+.input__fio {
+    margin-bottom: 10px;
+}
+.input__group {
+    margin-bottom: 10px;
+}
+.upd_profile_button {
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 10px;
+    background-color: #4F5FEB;
+    color: white;
+    border-radius: 40px;
+    outline: none;
+    border: 0px;
+    font-weight: 1000;
+}
+.upd_profile_button:hover {
+    background-color: #3e4ab8;
+    cursor: pointer;
+}
