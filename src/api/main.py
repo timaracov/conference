@@ -7,6 +7,7 @@ from typing import Optional
 from fastapi import FastAPI, Query, UploadFile
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import ORJSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 
 from config import PROJECT_PATH
 from repos import AppRepo
@@ -17,6 +18,13 @@ API = FastAPI()
 
 
 API.mount("/api/static", StaticFiles(directory=PROJECT_PATH / "static"))
+API.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
 
 
 @API.get("/version", tags=["General"])
@@ -43,14 +51,14 @@ async def login_to_profile(login: str, password: str):
 async def register_profile(
     login: str, 
     passwd_plain: str,
-    first_name: str,
-    second_name: str,
+    fullname: str,
+    group: str,
 ):
     AppRepo().add_user(
         login,
         passwd_plain,
-        first_name,
-        second_name,
+        fullname,
+        group,
     )
     return ORJSONResponse({"message": "ok"})
 

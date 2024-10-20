@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import "./Main.css";
 
+
 export function Main() {
     const [isLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();

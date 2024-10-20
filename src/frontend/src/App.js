@@ -13,6 +13,7 @@ import Patologies from './pages/patologies/Patologies';
 import Docs from './pages/docs/Docs';
 import Exercises from './pages/exercises/Execises';
 
+
 function App() {
   return (
     <Router>

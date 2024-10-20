@@ -7,28 +7,17 @@ import Popup from "../../components/Popup/Popup";
 import CustomSelect from "./components/CustomSelect/CustomSelect";
 import { Input } from "../../components/inputs/Input";
 
-const data = [
-  {
-    name: "Сколиоз",
-    level: 2,
-  },
-  {
-    name: "Плоскостопие",
-    level: 3,
-  },
-  {
-    name: "Сколиоз",
-    level: 2,
-  },
-  {
-    name: "Плоскостопие",
-    level: 3,
-  },
-];
+import endpoints from "../../api/endpoints";
+
+
+const data = [{name: 'a', level: 1}];
 
 const Patologies = () => {
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
+
+  let data2;
+  endpoints.getPatologies().then((e) => {data2 = e});
 
   const openPopup = () => {
     setPopupOpen(true);
