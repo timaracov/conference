@@ -10,7 +10,12 @@ import { Input } from "../../components/inputs/Input";
 import endpoints from "../../api/endpoints";
 
 
-const level_mapping = {
+type LevelMapping = {
+  [key: string]: number;
+};
+
+
+const level_mapping: LevelMapping = {
   "I Степень": 1,
   "II Степень": 2,
   "III Степень": 3,
@@ -23,9 +28,9 @@ const level_mapping = {
 const Patologies = () => {
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<string>("I Степень");
-  const [patName, setPatname] = useState('');
+  const [patName, setPatname] = useState<string>('');
 
-  const [patData, setPatData] = useState([]);
+  const [patData, setPatData] = useState<any[]>([]);
 
   const openPopup = () => {
     setPopupOpen(true);
@@ -51,9 +56,10 @@ const Patologies = () => {
       closePopup();
       alert("Ошибка добавления патологии. Пожалуйста, повторите позднее")
     })
+    updatePatologies()
   }
 
-  useEffect(() => {
+  function updatePatologies() {
     endpoints
     .getPatologies()
     .then((e) => {
@@ -63,11 +69,15 @@ const Patologies = () => {
     .catch((e) => {
       console.log(e);
     });
+  }
+
+  useEffect(() => {
+    updatePatologies()
     console.log(selectedOption);
   }, [selectedOption]);
 
   const cards = patData.map((el) => (
-    <PatologyCard name={el.name} level={el.level} />
+    <PatologyCard id={el.patology_id} name={el.name} level={el.level} listUpdFunc={updatePatologies}/>
   ));
 
   return (
@@ -91,7 +101,7 @@ const Patologies = () => {
         <div className="patologies__popup">
           <p className="popup__title">Добавление патологии</p>
           <div className="inputs__patologies">
-            <Input className="input__select" placeholder="Патология" type="text" onChange={e => setPatname(e.target.value)}/>
+            <Input className="input__select" placeholder="Патология" type="text" onChange={(e: any) => setPatname(e.target.value)}/>
             <CustomSelect
               options={["I Степень", "II Степень", "III Степень", "IV Степень", "V Степень", "VI Степень", ]}
               onSelect={handleSelectChange}

@@ -1,0 +1,11 @@
+services:
+  conf-front:
+    image: conf-front
+    container_name: "conf-frontend"
+    ports:
+      - "3000:3000"
+  conf-api:
+    image: conf-api
+    container_name: "conf-api"
+    ports:
+      - "8000:8000"

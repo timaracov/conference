@@ -26,7 +26,7 @@ import { Input } from "../../components/inputs/Input";
 const Docs = () => {
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [file, setFile] = useState<File | null>(null);
-  const [docs, setDocs] = useState([]);
+  const [docs, setDocs] = useState<any[]>([]);
   const [fileName, setFileName] = useState<string>('file');
 
   const openPopup = () => {
@@ -68,7 +68,7 @@ const Docs = () => {
     }
   }
 
-  useEffect(() => {
+  function updateDocuments() {
     endpoints
     .getDocuments()
     .then((d) => {
@@ -78,6 +78,10 @@ const Docs = () => {
     .catch((e) => {
       console.log(e);
     })
+  }
+
+  useEffect(() => {
+    updateDocuments()
     console.log(file);
   }, [file]);
 
@@ -97,7 +101,7 @@ const Docs = () => {
           </div>
           <div className="doc__page__data">
             {docs.map((el) => (
-              <DocCard name={el.name} img={make_img_path(el.file_path)} />
+              <DocCard id={el.document_id} name={el.name} img={make_img_path(el.file_path)} listUpdFunc={updateDocuments} />
             ))}
           </div>
         </div>
@@ -106,7 +110,7 @@ const Docs = () => {
       <Popup isOpen={isPopupOpen} onClose={closePopup}>
         <div className="patologies__popup">
           <p className="popup__title">Добавление файла</p>
-          <Input className="input__filename" placeholder="Название" type="text" onChange={e => setFileName(e.target.value)}/>
+          <Input className="input__filename" placeholder="Название" type="text" onChange={(e: any) => setFileName(e.target.value)}/>
           <input id="file" type="file" onChange={handleFileChange} />
           <button disabled={!file} onClick={() => uploadFile()}>Загрузить</button>
         </div>

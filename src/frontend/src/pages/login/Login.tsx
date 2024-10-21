@@ -29,8 +29,8 @@ export function Login () {
             <div className="border__page">
                 <h1 className="header__login">Медконсультант</h1>
                 <div id="inputs">
-                    <Input className="input__login" placeholder="Логин" type="text" onChange={e => setUsername(e.target.value)}></Input>
-                    <Input className="input__login" placeholder="Пароль" type="password" onChange={e => setPassword(e.target.value)}></Input>
+                    <Input className="input__login" placeholder="Логин" type="text" onChange={(e: any) => setUsername(e.target.value)}></Input>
+                    <Input className="input__login" placeholder="Пароль" type="password" onChange={(e: any) => setPassword(e.target.value)}></Input>
                 </div>
                 <div id="sub_links">
                     <a id="sign_up_a" href="signup">Sign Up</a>

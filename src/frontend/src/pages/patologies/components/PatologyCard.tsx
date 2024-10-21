@@ -2,10 +2,13 @@ import React from "react";
 
 import "./PatologyCard.css"
 import IconDel from "../../../icons/IconDel";
+import endpoints from "../../../api/endpoints";
 
 type PropsCard  = {
+    id: string,
     name: string;
     level: number;
+    listUpdFunc: Function
 };
 
 const levels = [
@@ -17,10 +20,18 @@ const levels = [
     'VI Степень',
 ];
 
-export default function PatologyCard({name, level}: PropsCard) {
+export default function PatologyCard({id, name, level, listUpdFunc}: PropsCard) {
     function deleteElement() {
-
+        endpoints
+        .deleteData(id, "pat")
+        .then()
+        .catch((e) => {
+            console.log(e);
+            alert("Ошибка удаления. Повторите попытку позже") 
+        })
+        listUpdFunc()
     }
+
     return (
         <div className="patology__card">
             <div className="patology__card__left">

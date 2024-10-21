@@ -111,8 +111,8 @@ export function Profile() {
           <Popup isOpen={isPopupOpen} onClose={closePopup}>
             <div className="profile__popup">
               <p className="popup__title">Обновить данные профиля</p>
-              <Input className="input__fio" placeholder={String(FIO)} type="text" onChange={(e) => setUpdFIO(e.target.value)}/>
-              <Input className="input__group" placeholder={String(group)} type="text" onChange={(e) => setUpdGroup(e.target.value)}/>
+              <Input className="input__fio" placeholder={String(FIO)} type="text" onChange={(e: any) => setUpdFIO(e.target.value)}/>
+              <Input className="input__group" placeholder={String(group)} type="text" onChange={(e: any) => setUpdGroup(e.target.value)}/>
               <button className="upd_profile_button" onClick={() => updateProfileInfo()}>Обновить</button>
             </div>
           </Popup>

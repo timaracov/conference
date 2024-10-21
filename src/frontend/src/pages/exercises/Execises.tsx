@@ -9,7 +9,7 @@ import endpoints from "../../api/endpoints";
 export default function Exercises() {
     const [myOrAll, setMyorAll] = useState(1);
 
-    const [list, setList] = useState([]);
+    const [list, setList] = useState<any[]>([]);
 
     useEffect(() => {
         endpoints

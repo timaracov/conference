@@ -9,5 +9,6 @@ if __name__ == "__main__":
     AppRepo().fill_patologies_and_exercises_data()
     uvicorn.run(
         "main:API",
-        reload=True
+        host="0.0.0.0",
+        port=8000,
     )

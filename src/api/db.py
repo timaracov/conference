@@ -3,7 +3,7 @@ __all__ = ["User", "Patology", "Exercise", "Document", "ExercisesAndPatologiesM2
 import logging
 import uuid
 
-from datetime import datetime, UTC
+from datetime import datetime
 
 import peewee as pw
 

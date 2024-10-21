@@ -102,3 +102,15 @@ async def add_docs(
 async def get_docs(user_id: str):
     docs = AppRepo().get_documents(user_id)
     return ORJSONResponse({"message": "ok", "data": docs})
+
+
+@API.delete("/documents/{doc_id}")
+async def del_doc(doc_id: str):
+    AppRepo().delete_document(doc_id)
+    return ORJSONResponse({"message": "ok"})
+
+
+@API.delete("/patologies/{pat_id}")
+async def del_pat(pat_id: str):
+    AppRepo().delete_patology(pat_id)
+    return ORJSONResponse({"message": "ok"})

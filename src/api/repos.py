@@ -1,4 +1,3 @@
-from decimal import ExtendedContext
 from typing import Optional
 from db import *
 from utils import hash_pass
@@ -129,3 +128,9 @@ class AppRepo:
                 ExercisesAndPatologiesM2M.get(ExercisesAndPatologiesM2M.patology.name == mm.patology.name)
             except:
                 mm.save(force_insert=True)
+
+    def delete_document(self, doc_id: str):
+        Document.delete().where(Document.document_id == doc_id).execute()
+
+    def delete_patology(self, pat_id: str):
+        Patology.delete().where(Patology.patology_id == pat_id).execute()
