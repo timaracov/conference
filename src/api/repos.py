@@ -100,7 +100,7 @@ class AppRepo:
         ]
         e = [
             Exercise(
-                name="",
+                name="Дыхательные упражнения",
                 description="",
                 minutes_to_complete=10,
                 difficulty=1,

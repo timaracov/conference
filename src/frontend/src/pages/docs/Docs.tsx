@@ -112,7 +112,7 @@ const Docs = () => {
           <p className="popup__title">Добавление файла</p>
           <Input className="input__filename" placeholder="Название" type="text" onChange={(e: any) => setFileName(e.target.value)}/>
           <input id="file" type="file" onChange={handleFileChange} />
-          <button disabled={!file} onClick={() => uploadFile()}>Загрузить</button>
+          <button className="doc_add_button" disabled={!file} onClick={() => uploadFile()}>Загрузить</button>
         </div>
       </Popup>
     </div>
