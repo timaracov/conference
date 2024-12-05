@@ -1,5 +1,7 @@
 import React from "react";
 import "./Popup.css";
+import utils from "../../utils/theme";
+
 
 type Props = {
   isOpen: boolean;
@@ -11,9 +13,9 @@ const Popup = ({ isOpen, onClose, children }: Props) => {
   if (!isOpen) return null;
 
   return (
-    <div className="popup-overlay" onClick={onClose}>
-      <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-        {/* <button className="close-button" onClick={onClose}>Закрыть</button> */}
+    <div className={utils.isThemeDark() ? "popup-overlay" : "popup-overlay-dark"} onClick={onClose}>
+      <div className={utils.isThemeDark() ? "popup-content" : "popup-content"} onClick={(e) => e.stopPropagation()}>
+        {<button className={utils.isThemeDark() ? "close-button" : "close-button-dark"} onClick={onClose}>Закрыть</button>}
         {children}
       </div>
     </div>

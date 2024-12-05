@@ -8,6 +8,7 @@ import CustomSelect from "./components/CustomSelect/CustomSelect";
 import { Input } from "../../components/inputs/Input";
 
 import endpoints from "../../api/endpoints";
+import utils from "../../utils/theme";
 
 
 type LevelMapping = {
@@ -31,6 +32,7 @@ const Patologies = () => {
   const [patName, setPatname] = useState<string>('');
 
   const [patData, setPatData] = useState<any[]>([]);
+  const [theme, setTheme] = useState(utils.getTheme());
 
   const openPopup = () => {
     setPopupOpen(true);
@@ -77,12 +79,12 @@ const Patologies = () => {
   }, [selectedOption]);
 
   const cards = patData.map((el) => (
-    <PatologyCard id={el.patology_id} name={el.name} level={el.level} listUpdFunc={updatePatologies}/>
+    <PatologyCard id={el.patology_id} name={el.name} level={el.level} listUpdFunc={updatePatologies} theme={theme}/>
   ));
 
   return (
     <div className="container">
-      <Profile />
+      <Profile theme={theme} setTheme={setTheme}/>
       <div className="patologies__page">
         <div className="patologies__page__container">
           <div className="patologies__page__buttons">

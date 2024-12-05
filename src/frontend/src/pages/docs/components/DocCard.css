@@ -43,3 +43,51 @@
     margin-top: 15px;
     margin-left: 5px;
 }
+
+/* -.-.-.-.-.-.-. DARK -.-.-.-.-.-.-. */
+
+.doc__card-dark {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #222;
+    border: 1px solid #DBDBDB;
+    border-radius: 15px;
+}
+
+.doc__card-dark:hover {
+    background-color: #111;
+    border-color: #C0C0C0;
+    cursor: pointer;
+}
+
+.doc__card__img-dark {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #333;
+    border-radius: 10px;
+}
+
+.doc__card__name-dark {
+    font-size: 12px;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.doc__card__left-dark {
+    display: flex;
+}
+.doc__card__right-dark {
+    display: flex;
+}
+
+.icon_img_add-dark {
+    margin-top: 15px;
+}
+.icon_del_doc-dark {
+    margin-top: 15px;
+    margin-left: 5px;
+}

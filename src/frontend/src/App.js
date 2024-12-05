@@ -12,12 +12,13 @@ import { Main } from './pages/main/Main';
 import Patologies from './pages/patologies/Patologies';
 import Docs from './pages/docs/Docs';
 import Exercises from './pages/exercises/Execises';
+import utils from "./utils/theme";
 
 
 function App() {
+  utils.setBackgroundColor();
   return (
     <Router>
-      {/* {  } */}
       <Routes>
         <Route
           path="/"

@@ -53,3 +53,61 @@
     background-color: #3e4ab8;
     cursor: pointer;
 }
+
+/* -.-.-.-.-.-.-. DARK -.-.-.-.-.-.-. */
+
+.doc__page-dark {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.doc__page__container-dark {
+    width: 364px;
+    margin-left: 60px;
+}
+
+.docs__page__buttons-dark {
+    display: flex;
+    justify-content: right;
+}
+
+.docs__page__add_button-dark {
+    padding: 5px 10px;
+    font-size: 10px;
+    background-color: #333;
+    color: white;
+    border-radius: 40px;
+    outline: none;
+    border: 0px;
+    font-weight: 1000;
+    margin-bottom: 10px;
+}
+
+.docs__page__add_button-dark:hover {
+    background-color: #555;
+    cursor: pointer;
+}
+
+.input__filename-dark {
+    margin-bottom: 10px;
+}
+
+.doc_add_button-dark {
+    padding: 5px 10px;
+    font-size: 10px;
+    background-color: #111;
+    color: white;
+    border-radius: 40px;
+    outline: none;
+    border: 0px;
+    font-weight: 1000;
+	width: 100%;
+	margin-top: 10px
+}
+
+.doc_add_button-dark:hover {
+    background-color: #222;
+    cursor: pointer;
+}

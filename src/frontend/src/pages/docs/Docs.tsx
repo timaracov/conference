@@ -4,30 +4,18 @@ import DocCard from "./components/DocCard";
 import "./Docs.css";
 import { Profile } from "../../components/profile/Profile";
 import Popup from "../../components/Popup/Popup";
-import endpoints from "../../api/endpoints";
 import { baseURL } from "../../api/config";
 import { Input } from "../../components/inputs/Input";
 
-// const data = [
-//   {
-//     name: "Doc1",
-//     img: "https://avatars.mds.yandex.net/i?id=7fbd5c63911ec240c3cb0098e0e033e094fa1b1f-10928869-images-thumbs&n=13",
-//   },
-//   {
-//     name: "Doc2",
-//     img: "https://avatars.mds.yandex.net/i?id=7fbd5c63911ec240c3cb0098e0e033e094fa1b1f-10928869-images-thumbs&n=13",
-//   },
-//   {
-//     name: "Doc3",
-//     img: "https://avatars.mds.yandex.net/i?id=7fbd5c63911ec240c3cb0098e0e033e094fa1b1f-10928869-images-thumbs&n=13",
-//   },
-// ];
+import endpoints from "../../api/endpoints";
+import utils from "../../utils/theme";
 
 const Docs = () => {
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [file, setFile] = useState<File | null>(null);
   const [docs, setDocs] = useState<any[]>([]);
   const [fileName, setFileName] = useState<string>('file');
+  const [theme, setTheme] = useState(utils.getTheme());
 
   const openPopup = () => {
     setPopupOpen(true);
@@ -87,7 +75,7 @@ const Docs = () => {
 
   return (
     <div className="container">
-      <Profile />
+      <Profile theme={theme} setTheme={setTheme}/>
       <div className="doc__page">
         <div className="doc__page__container">
           <div className="docs__page__buttons">
@@ -101,7 +89,7 @@ const Docs = () => {
           </div>
           <div className="doc__page__data">
             {docs.map((el) => (
-              <DocCard id={el.document_id} name={el.name} img={make_img_path(el.file_path)} listUpdFunc={updateDocuments} />
+              <DocCard id={el.document_id} name={el.name} img={make_img_path(el.file_path)} listUpdFunc={updateDocuments} theme={theme}/>
             ))}
           </div>
         </div>

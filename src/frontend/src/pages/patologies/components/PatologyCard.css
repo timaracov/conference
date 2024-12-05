@@ -34,3 +34,44 @@
 .icon_del:hover {
     cursor: pointer;
 }
+
+
+/* -.-.-.-.-.-.-. DARK -.-.-.-.-.-.-. */
+
+
+.patology__card-dark {
+    background-color: white;
+    border: 1px solid #111;
+    border-radius: 15px;
+    display: flex;
+    padding: 5px 0;
+    margin-bottom: 10px;
+}
+
+.patology__card__left-dark {
+    display: flex;
+    justify-content: space-between;
+    width: 364px;
+    padding: 5px 10px;
+}
+
+.patology__card__name-dark {
+    font-size: 12px;
+    font-weight: 700;
+    width: 100px;
+    margin-left: 10px;
+}
+
+.patology__card__level-dark {
+    font-size: 10px;
+    margin-right: 10px;
+}
+
+.patology__card__right-dark {
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+.icon_del:hover-dark {
+    cursor: pointer;
+}

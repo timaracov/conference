@@ -8,7 +8,8 @@ type PropsCard  = {
     id: string,
     name: string;
     level: number;
-    listUpdFunc: Function
+    listUpdFunc: Function,
+	theme: string | undefined
 };
 
 const levels = [
@@ -20,7 +21,7 @@ const levels = [
     'VI Степень',
 ];
 
-export default function PatologyCard({id, name, level, listUpdFunc}: PropsCard) {
+export default function PatologyCard({id, name, level, listUpdFunc, theme}: PropsCard) {
     function deleteElement() {
         endpoints
         .deleteData(id, "pat")
@@ -33,13 +34,13 @@ export default function PatologyCard({id, name, level, listUpdFunc}: PropsCard) 
     }
 
     return (
-        <div className="patology__card">
-            <div className="patology__card__left">
-                <div className="patology__card__name">{name}</div>
-                <div className="patology__card__level">{levels[level-1]}</div>
+        <div className={theme === "l" ? "patology__card" : "patology__card-dark"}>
+            <div className={theme === "l" ? "patology__card__left" : "patology__card__left-dark"}>
+                <div className={theme === "l" ? "patology__card__name" : "patology__card__name-dark"}>{name}</div>
+                <div className={theme === "l" ? "patology__card__level" : "patology__card__level-dark"}>{levels[level-1]}</div>
             </div>
-            <div className="patology__card__right" onClick={() => deleteElement()}>
-                <IconDel className="icon_del"/>
+            <div className={theme === "l" ? "patology__card__right" : "patology__card__right-dark"} onClick={() => deleteElement()}>
+                <IconDel className={theme === "l" ? "icon_del" : "icon_del-dark"}/>
             </div>
         </div>
     )

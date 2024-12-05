@@ -38,14 +38,6 @@
     margin-left: 5px;
 }
 
-.time__icon {
-}
-.difficulty__ok {}
-
-
-/* opened variant: */
-
-
 .exercises__card__opened {
     margin-top: 10px;
     background-color: white;
@@ -92,5 +84,98 @@
     transform: scale(1,-1);
 }
 .exercises_expand_icon:hover {
+    cursor: pointer;
+}
+
+
+/* -.-.-.-.-.-.-. DARK -.-.-.-.-.-.-. */
+
+
+.exercises__card-dark {
+    margin-top: 10px;
+    background-color: white;
+    border: 1px solid #111;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.exercises__card__left-dark {
+    padding: 5px 10px;
+}
+.exercises__card__name-dark {
+    font-size: 10px;
+    font-weight: 700;
+}
+.exercises__card__text-dark {
+    font-size: 8px;
+}
+.exercises__card__right-dark {
+    position: relative;
+    padding: 5px 10px;
+    font-size: 10px;
+}
+.exercises__card__difficulty-dark {
+    display: flex;
+}
+.exercises__card__time-dark {
+    position: absolute;
+    bottom: 5px;
+    text-align: right;
+    display: flex;
+}
+.difficulty__name-dark {
+   width: 40px;
+   margin-left: 5px;
+}
+.time__name-dark {
+    margin-left: 5px;
+}
+
+.exercises__card__opened-dark {
+    margin-top: 10px;
+    background-color: white;
+    border: 1px solid #111;
+    border-radius: 10px;
+    padding: 10px;
+}
+.exercises__card__opened_top-dark {
+    display: flex;
+}
+.exercises__card__opened_name-dark {
+    font-size: 10px;
+    font-weight: 700;
+}
+.exercises__card__opened_difficulty-dark {
+    display: flex;
+    margin-left: 5px;
+    margin-top: 3px;
+}
+.difficulty__opened_name-dark {
+    font-size: 8px;
+}
+.exercises__card_opened__time-dark {
+    display: flex;
+    margin-left: 5px;
+    margin-top: 3px;
+}
+.time__opened_name-dark {
+    font-size: 8px;
+    width: 30px;
+}
+.difficulty__opened_icon-dark {
+    margin: 7px 2px 0 2px;
+}
+.time_opened__icon-dark {
+    margin: 7px 5px 0 2px;
+}
+
+.exercises__expand-dark {
+    padding: 0 5px 0 5px;
+}
+.exercises_expand_icon-dark {
+    margin-top: 10px;
+    transform: scale(1,-1);
+}
+.exercises_expand_icon:hover-dark {
     cursor: pointer;
 }

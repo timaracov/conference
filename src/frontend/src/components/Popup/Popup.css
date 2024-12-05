@@ -33,3 +33,41 @@
   color: #444444;
   margin-bottom: 20px;
 }
+
+/* DARK THEME */
+
+.popup-overlay-dark {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content-dark {
+  background: #222;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px; /* по желанию */
+  position: relative;
+}
+
+.close-button-dark {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.popup__title {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  color: #eee;
+  margin-bottom: 20px;
+}

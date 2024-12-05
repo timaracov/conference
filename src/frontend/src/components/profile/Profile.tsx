@@ -5,11 +5,18 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import classNames from "classnames";
 import Popup from "../Popup/Popup";
 import IconEdit from "../../icons/IconEdit";
-import endpoints from "../../api/endpoints";
 import { Input } from "../inputs/Input";
+import endpoints from "../../api/endpoints";
+import utils from "../../utils/theme";
 
 
-export function Profile() {
+type ProfileProps = {
+	theme: string | undefined,
+	setTheme: CallableFunction,
+};
+
+
+export function Profile({theme, setTheme}: ProfileProps) {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -64,14 +71,28 @@ export function Profile() {
       {location.pathname !== "/" && (
         <div className="home__page">
           <div className="container">
-            <div id="outer__container">
-              <div id="pic__names">
-                <img id="profile__avatar" src="/profile.png" alt="" />
-                <div id="profile__names">
-                  <p className="profile__name">{FIO}</p>
-                  <p className="profile__group">{group}</p>
+            <div className="theme__chooser">
+              <div 
+                className={theme === "d" ? "theme__chooser_dark_when_dark" : "theme__chooser_dark_when_light"}
+                onClick={() => {utils.setTheme("d"); setTheme("d"); utils.setBackgroundColor()}}
+              >
+                Темная
+              </div>
+              <div 
+                className={theme === "d" ? "theme__chooser_light_when_dark" : "theme__chooser_light_when_light"}
+                onClick={() => {utils.setTheme("l"); setTheme("l"); utils.setBackgroundColor()}}
+              >
+                Светлая
+              </div>
+            </div>
+            <div id={theme === "l" ? "outer__container" : "outer__container-dark"}>
+              <div id={theme === "l" ? "pic__names" : "pic__names-dark"}>
+                <img id={theme === "l" ? "profile__avatar" : "profile__avatar-dark"} src="/profile.png" alt="" />
+                <div id={theme === "l" ? "profile__names" : "profile__names-dark"}>
+                  <p className={theme === "l" ? "profile__name" : "profile__name-dark"}>{FIO}</p>
+                  <p className={theme === "l" ? "profile__group" : "profile__group-dark"}>{group}</p>
                   <div onClick={() => openPopup()}>
-                    <IconEdit className="profile__icon" />
+                    <IconEdit className={theme === "l" ? "profile__icon" : "profile__icon-dark"} />
                   </div>
                 </div>
               </div>
@@ -109,11 +130,11 @@ export function Profile() {
           </div>
 
           <Popup isOpen={isPopupOpen} onClose={closePopup}>
-            <div className="profile__popup">
-              <p className="popup__title">Обновить данные профиля</p>
-              <Input className="input__fio" placeholder={String(FIO)} type="text" onChange={(e: any) => setUpdFIO(e.target.value)}/>
-              <Input className="input__group" placeholder={String(group)} type="text" onChange={(e: any) => setUpdGroup(e.target.value)}/>
-              <button className="upd_profile_button" onClick={() => updateProfileInfo()}>Обновить</button>
+            <div className={theme === "l" ? "profile__popup" : "profile__popup-dark"}>
+              <p className={theme === "l" ? "popup__title" : "popup__title-dark"}>Обновить данные профиля</p>
+              <Input className={theme === "l" ? "input__fio" : "input__fio-dark"} placeholder={String(FIO)} type="text" onChange={(e: any) => setUpdFIO(e.target.value)}/>
+              <Input className={theme === "l" ? "input__group" : "input__group-dark"} placeholder={String(group)} type="text" onChange={(e: any) => setUpdGroup(e.target.value)}/>
+              <button className={theme === "l" ? "upd_profile_button" : "upd_profile_button-dark"} onClick={() => updateProfileInfo()}>Обновить</button>
             </div>
           </Popup>
         </div>
