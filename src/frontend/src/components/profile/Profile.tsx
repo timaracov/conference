@@ -11,7 +11,7 @@ import utils from "../../utils/theme";
 
 
 type ProfileProps = {
-	theme: string | undefined,
+	theme: string,
 	setTheme: CallableFunction,
 };
 
@@ -98,29 +98,42 @@ export function Profile({theme, setTheme}: ProfileProps) {
               </div>
               <div id="variants">
                 <Link
-                  className={classNames("variant variant_1", {
-                    "variant_active variant_active_1":
-                      currentTab === "/patologies" || currentTab === "/profile",
-                  })}
+                  className={
+					classNames(
+						`${theme === "l" ? "variant" : "variant-dark"} ${theme === "l" ? "variant_1" : "variant_1-dark"}`,
+						theme === "l" 
+							? {"variant_active variant_active_1": currentTab === "/patologies" || currentTab === "/profile"} 
+							: {"variant_active-dark variant_active_1-dark": currentTab === "/patologies" || currentTab === "/profile"} 
+					)
+				  }
                   to={"/patologies"}
                 >
                   Патологии
                 </Link>
 
                 <Link
-                  className={classNames("variant variant_2", {
-                    "variant_active variant_active_2":
-                      currentTab === "/exercises",
-                  })}
+                  className={
+					classNames(
+						`${theme === "l" ? "variant" : "variant-dark"} ${theme === "l" ? "variant_2" : "variant_2-dark"}`,
+						theme === "l" 
+							? {"variant_active variant_active_2": currentTab === "/exercises"}
+							: {"variant_active-dark variant_active_2-dark": currentTab === "/exercises"}
+					)
+				  }
                   to={"/exercises"}
                 >
                   Упражнения
                 </Link>
 
                 <Link
-                  className={classNames("variant variant_3", {
-                    "variant_active variant_active_3": currentTab === "/docs",
-                  })}
+                  className={
+					  classNames(
+						`${theme === "l" ? "variant" : "variant-dark"} ${theme === "l" ? "variant_3" : "variant_3-dark"}`,
+						theme === "l" 
+							? {"variant_active variant_active_3": currentTab === "/docs"}
+							: {"variant_active-dark variant_active_3-dark": currentTab === "/docs"}
+						)
+					}
                   to={"/docs"}
                 >
                   Документы
@@ -129,7 +142,7 @@ export function Profile({theme, setTheme}: ProfileProps) {
             </div>
           </div>
 
-          <Popup isOpen={isPopupOpen} onClose={closePopup}>
+          <Popup isOpen={isPopupOpen} onClose={closePopup} theme={theme}>
             <div className={theme === "l" ? "profile__popup" : "profile__popup-dark"}>
               <p className={theme === "l" ? "popup__title" : "popup__title-dark"}>Обновить данные профиля</p>
               <Input className={theme === "l" ? "input__fio" : "input__fio-dark"} placeholder={String(FIO)} type="text" onChange={(e: any) => setUpdFIO(e.target.value)}/>

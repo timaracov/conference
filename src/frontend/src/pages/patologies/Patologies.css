@@ -62,3 +62,78 @@
     background-color: #3e4ab8;
     cursor: pointer;
 }
+
+
+/* -.-.-.-.-.- DARK  -.-.-.-.-.-  */
+
+
+.patologies__page-dark {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.patologies__page__container-dark {
+    width: 364px;
+    margin-left: 60px;
+}
+
+.patologies__page__buttons-dark {
+    display: flex;
+    justify-content: right;
+}
+
+.patologies__page__add_button-dark {
+    padding: 5px 10px;
+    font-size: 10px;
+    background-color: #4F5FEB;
+    color: white;
+    border-radius: 40px;
+    outline: none;
+    border: 0px;
+    font-weight: 1000;
+}
+.patologies__page__add_button:hover-dark {
+    background-color: #3e4ab8;
+    cursor: pointer;
+}
+
+.patologies__page__data-dark {
+    padding: 10px 0 0 0;
+}
+
+.patologies__popup-dark {
+	background-color: #222;
+}
+
+.popup__select-dark {
+    border-radius: 10px; 
+    cursor: pointer;
+}
+
+.inputs__patologies-dark {
+    display: flex;
+	color: black;
+}
+
+.input__select-dark {
+    border-color: black;
+	color: black;
+}
+
+.patology__add-dark {
+    padding: 5px 10px;
+    font-size: 10px;
+    background-color: #4F5FEB;
+    color: white;
+    border-radius: 40px;
+    outline: none;
+    border: 0px;
+    font-weight: 1000;
+    margin-top: 20px;
+}
+.patology__add-dark:hover{
+    background-color: #3e4ab8;
+    cursor: pointer;
+}

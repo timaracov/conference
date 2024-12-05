@@ -27,3 +27,36 @@
     background-color: #eaeaea;
     cursor: pointer;
 }
+
+/* --------- DARK ---------- */
+
+.custom_select-dark {
+    border-radius: 10px;
+    border: 1px solid #777;
+    padding: 8px 5px 0 5px;
+    margin-left: 10px;
+    font-size: 12px;
+	color: white;
+}
+
+.select__top-dark {
+    cursor: pointer;
+}
+.select_opened-dark {
+    position: absolute;
+    background-color: #222;
+    border: 1px solid #777;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 0 5px;
+}
+.select_ok-dark {
+    margin-top: 5px;
+}
+.select_ok-dark:last-child {
+    margin-bottom: 5px;
+}
+.select_ok-dark:hover {
+    background-color: #333;
+    cursor: pointer;
+}

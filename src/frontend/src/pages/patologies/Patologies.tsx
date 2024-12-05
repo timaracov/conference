@@ -99,18 +99,19 @@ const Patologies = () => {
         </div>
       </div>
 
-      <Popup isOpen={isPopupOpen} onClose={closePopup}>
-        <div className="patologies__popup">
-          <p className="popup__title">Добавление патологии</p>
-          <div className="inputs__patologies">
-            <Input className="input__select" placeholder="Патология" type="text" onChange={(e: any) => setPatname(e.target.value)}/>
+      <Popup isOpen={isPopupOpen} onClose={closePopup} theme={theme}>
+        <div className={theme === "l" ? "patologies__popup" : "patologies__popup-dark"}>
+          <p className={theme === "l" ? "popup__title" : "popup__title-dark"}>Добавление патологии</p>
+          <div className={theme === "l" ? "inputs__patologies" : "inputs__patologies-dark"}>
+            <Input className={theme === "l" ? "input__select" : "input__select-dark"} placeholder="Патология" type="text" onChange={(e: any) => setPatname(e.target.value)}/>
             <CustomSelect
               options={["I Степень", "II Степень", "III Степень", "IV Степень", "V Степень", "VI Степень", ]}
               onSelect={handleSelectChange}
               placeholder="Степень"
+			  theme={theme}
             />
           </div>
-          <button className="patology__add" onClick={() => addNewPatology()}>Добавить</button>
+          <button className={theme === "l" ? "patology__add" : "patology__add-dark"} onClick={() => addNewPatology()}>Добавить</button>
         </div>
       </Popup>
     </div>

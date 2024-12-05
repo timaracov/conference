@@ -95,12 +95,12 @@ const Docs = () => {
         </div>
       </div>
 
-      <Popup isOpen={isPopupOpen} onClose={closePopup}>
-        <div className="patologies__popup">
-          <p className="popup__title">Добавление файла</p>
-          <Input className="input__filename" placeholder="Название" type="text" onChange={(e: any) => setFileName(e.target.value)}/>
-          <input id="file" type="file" onChange={handleFileChange} />
-          <button className="doc_add_button" disabled={!file} onClick={() => uploadFile()}>Загрузить</button>
+      <Popup isOpen={isPopupOpen} onClose={closePopup} theme={theme}>
+        <div className={theme === "l" ? "patologies__popup" : "patologies__popup-dark"}>
+          <p className={theme === "l" ? "popup__title" : "popup__title-dark"}>Добавление файла</p>
+          <Input className={theme === "l" ? "input__filename" : "input__filename-dark"} placeholder="Название" type="text" onChange={(e: any) => setFileName(e.target.value)}/>
+          <input id={theme === "l" ? "file" : "file-dark"} type="file" onChange={handleFileChange} />
+          <button className={theme === "l" ? "doc_add_button" : "doc_add_button-dark"} disabled={!file} onClick={() => uploadFile()}>Загрузить</button>
         </div>
       </Popup>
     </div>

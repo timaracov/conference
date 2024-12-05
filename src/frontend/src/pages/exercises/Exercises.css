@@ -73,72 +73,77 @@
 
 
 
-.exercises__page {
+.exercises__page-dark {
     display: flex;
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.exercises__page__container {
+.exercises__page__container-dark {
     width: 364px;
     margin-left: 60px;
 }
-.exerises__buttons {
+.exerises__buttons-dark {
     display: flex;
 }
-.my__list__button {
+.my__list__button-dark {
     background-color: #222;
-    border: 1px solid #111;
+    border: 1px solid #777;
+	color: white;
     border-radius: 15px;
     font-size: 10px;
     padding: 5px 10px;
 }
-.my__list__button:hover {
+.my__list__button-dark:hover {
     background-color: #333;
     border: 1px solid #444;
+	color: #777;
     cursor: pointer;
 }
-.my__list__button__active {
-    background-color: white;
-    border: 1px solid #444;
+.my__list__button__active-dark {
+    background-color: #222;
+    border: 1px solid #777;
+	color: white;
     border-radius: 15px;
     font-size: 10px;
     padding: 5px 10px;
     font-weight: 700;
 }
-.my__list__button__active:hover {
-    background-color: #222;
-    border: 1px solid #111;
-    color: #2a2a2a;
+.my__list__button__active-dark:hover {
+    background-color: #333;
+    border: 1px solid #444;
+	color: #777;
     cursor: pointer;
 }
 
-.all__list__button {
-    background-color: white;
-    border: 1px solid #222;
+.all__list__button-dark {
+    background-color: #222;
+	color: white;
+    border: 1px solid #777;
     border-radius: 15px;
     font-size: 10px;
     padding: 5px 10px;
     margin-left: 10px;
 }
-.all__list__button:hover {
-    background-color: #222;
-    border: 1px solid #111;
-    color: #2a2a2a;
+.all__list__button-dark:hover {
+    background-color: #333;
+    border: 1px solid #444;
+	color: #777;
     cursor: pointer;
 }
-.all__list__button__active {
-    background-color: white;
-    border: 1px solid #222;
+.all__list__button__active-dark {
+    background-color: #222;
+    border: 1px solid #777;
+	color: white;
     border-radius: 15px;
     font-size: 10px;
     padding: 5px 10px;
     margin-left: 10px;
     font-weight: 700;
 }
-.all__list__button__active:hover {
-    background-color: #222;
-    border: 1px solid #111;
-    color: #2a2a2a;
+.all__list__button__active-dark:hover {
+    background-color: #333;
+    border: 1px solid #444;
+	color: #777;
     cursor: pointer;
 }

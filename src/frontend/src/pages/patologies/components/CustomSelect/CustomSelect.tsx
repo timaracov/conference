@@ -7,12 +7,14 @@ interface CustomSelectProps {
   options: string[];
   onSelect: (value: string) => void;
   placeholder?: string;
+  theme: string,
 }
 
 const CustomSelect: React.FC<CustomSelectProps> = ({
   options,
   onSelect,
   placeholder,
+  theme
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [selectedValue, setSelectedValue] = useState<string | null>(null);
@@ -29,22 +31,22 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
 
   return (
     <div
-      className="custom_select"
-    >
+      className={theme === "l" ? "custom_select" : "custom_select-dark"} 
+	>
       <div
-        className="select__top"
-        onClick={toggleDropdown}
+        className={theme === "l" ? "select__top" : "select__top-dark"}
+		onClick={toggleDropdown}
       >
         {selectedValue || placeholder || "Select..."}
       </div>
       {isOpen && (
         <div
-          className="select_opened"
-        >
+          className={theme === "l" ? "select_opened" : "select_opened-dark"} 
+		>
           {options.map((option) => (
             <div
-              className="select_ok"
-              key={option}
+              className={theme === "l" ? "select_ok" : "select_ok-dark"} 
+			  key={option}
               onClick={() => handleOptionClick(option)}
             >
               {option}

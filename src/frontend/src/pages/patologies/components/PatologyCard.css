@@ -40,8 +40,9 @@
 
 
 .patology__card-dark {
-    background-color: white;
-    border: 1px solid #111;
+    background-color: #222;
+    border: 1px solid #777;
+	color: #eee;
     border-radius: 15px;
     display: flex;
     padding: 5px 0;
@@ -63,6 +64,7 @@
 }
 
 .patology__card__level-dark {
+	color: #eee;
     font-size: 10px;
     margin-right: 10px;
 }

@@ -32,8 +32,28 @@ export default function Exercises() {
             <div className="exercises__page">
                 <div className="exercises__page__container">
                     <div className="exerises__buttons">
-                        <div className={myOrAll=== 1 ? "my__list__button__active" : "my__list__button"} onClick={() => {setMyorAll(1)}}>Мой список</div>
-                        <div className={myOrAll === 2 ? "all__list__button__active" : "all__list__button"} onClick={() => {setMyorAll(2)}}>Все упражнения</div>
+                        <div className={
+							myOrAll=== 1
+								? (theme === "l"
+									? "my__list__button__active" 
+									: "my__list__button__active-dark") 
+								: (theme === "l"
+									? "my__list__button" 
+									: "my__list__button-dark")
+							} 
+							onClick={() => {setMyorAll(1)}}>
+							Мой список
+						</div>
+                        <div className={
+							myOrAll === 2 
+								? (theme === "l"
+									? "all__list__button__active" 
+									: "all__list__button__active-dark") 
+								: (theme === "l"
+									? "all__list__button" 
+									: "all__list__button-dark")
+							} 
+							onClick={() => {setMyorAll(2)}}>Все упражнения</div>
                     </div>
                     <div className="exercises__container">
                         {list.map(el =>

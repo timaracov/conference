@@ -11,7 +11,7 @@ type DocCardProps = {
   img: string;
   name: string;
   listUpdFunc: Function,
-  theme: string | undefined
+  theme: string
 };
 
 export default function DocCard({ id, img, name, listUpdFunc, theme }: DocCardProps) {
@@ -45,7 +45,7 @@ export default function DocCard({ id, img, name, listUpdFunc, theme }: DocCardPr
         </div>
       </div>
 
-      <Popup isOpen={isPopupOpen} onClose={closePopup}>
+      <Popup isOpen={isPopupOpen} onClose={closePopup} theme={theme}>
         <div className={theme === "l" ? "patologies__popup" : "patologies__popup-dark"}>
           <p className={theme === "l" ? "popup__title" : "popup__title-dark"}>Удалить файл "{name}"?</p>
 
